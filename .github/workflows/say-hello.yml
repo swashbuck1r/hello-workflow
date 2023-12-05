@@ -1,6 +1,11 @@
 name: hello-workflow
 
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+    inputs: 
+      caller_message:
+        description: 'A message from the caller'
+        required: true
 
 jobs:
   say-hello:
@@ -9,4 +14,4 @@ jobs:
       - name: say hello
         shell: bash
         run: |
-          echo "Hello world"
+          echo "The caller says: ${{ github.event.inputs.caller_message }}"
