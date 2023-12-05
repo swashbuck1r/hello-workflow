@@ -15,3 +15,5 @@ jobs:
         shell: bash
         run: |
           echo "The caller says: ${{ github.event.inputs.caller_message }}"
+    outputs:
+      response_message: "this was returned from GitHub actions"
